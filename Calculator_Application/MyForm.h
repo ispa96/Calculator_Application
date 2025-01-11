@@ -53,6 +53,7 @@ namespace CalculatorApplication {
 		char operation = '0';
 
 	private: System::Windows::Forms::Button^ button_equal;
+	private: System::Windows::Forms::Button^ button_clear;
 
 	private:
 		/// <summary>
@@ -75,6 +76,7 @@ namespace CalculatorApplication {
 			this->button_plus = (gcnew System::Windows::Forms::Button());
 			this->button_minus = (gcnew System::Windows::Forms::Button());
 			this->button_equal = (gcnew System::Windows::Forms::Button());
+			this->button_clear = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -157,11 +159,22 @@ namespace CalculatorApplication {
 			this->button_equal->UseVisualStyleBackColor = true;
 			this->button_equal->Click += gcnew System::EventHandler(this, &MyForm::button_equal_Click);
 			// 
+			// button_clear
+			// 
+			this->button_clear->Location = System::Drawing::Point(12, 127);
+			this->button_clear->Name = L"button_clear";
+			this->button_clear->Size = System::Drawing::Size(99, 67);
+			this->button_clear->TabIndex = 8;
+			this->button_clear->Text = L"C";
+			this->button_clear->UseVisualStyleBackColor = true;
+			this->button_clear->Click += gcnew System::EventHandler(this, &MyForm::button_clear_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(665, 463);
+			this->Controls->Add(this->button_clear);
 			this->Controls->Add(this->button_equal);
 			this->Controls->Add(this->button_minus);
 			this->Controls->Add(this->button_plus);
@@ -268,6 +281,19 @@ namespace CalculatorApplication {
 			result *= -1;
 
 		first_element_value = result.ToString();
+	}
+	private: System::Void button_clear_Click(System::Object^ sender, System::EventArgs^ e) {
+		any_key_pressed = false;
+		current_element = false;
+
+		first_element_value = "";
+		second_element_value = "";
+
+		first_element_sign = '0';
+		second_element_sign = '0';
+		operation = '0';
+
+		textBox1->Text = "";
 	}
 };
 }
