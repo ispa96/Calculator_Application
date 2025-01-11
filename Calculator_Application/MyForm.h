@@ -130,6 +130,8 @@ namespace CalculatorApplication {
 			this->button0->Text = L"0";
 			this->button0->UseVisualStyleBackColor = false;
 			this->button0->Click += gcnew System::EventHandler(this, &MyForm::button0_Click);
+			this->button0->MouseEnter += gcnew System::EventHandler(this, &MyForm::button0_MouseEnter);
+			this->button0->MouseLeave += gcnew System::EventHandler(this, &MyForm::button0_MouseLeave);
 			// 
 			// button3
 			// 
@@ -142,6 +144,8 @@ namespace CalculatorApplication {
 			this->button3->Text = L"3";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			this->button3->MouseEnter += gcnew System::EventHandler(this, &MyForm::button3_MouseEnter);
+			this->button3->MouseLeave += gcnew System::EventHandler(this, &MyForm::button3_MouseLeave);
 			// 
 			// button2
 			// 
@@ -154,6 +158,8 @@ namespace CalculatorApplication {
 			this->button2->Text = L"2";
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm::button2_MouseEnter);
+			this->button2->MouseLeave += gcnew System::EventHandler(this, &MyForm::button2_MouseLeave);
 			// 
 			// button1
 			// 
@@ -166,6 +172,8 @@ namespace CalculatorApplication {
 			this->button1->Text = L"1";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->button1->MouseEnter += gcnew System::EventHandler(this, &MyForm::button1_MouseEnter);
+			this->button1->MouseLeave += gcnew System::EventHandler(this, &MyForm::button1_MouseLeave);
 			// 
 			// button_plus
 			// 
@@ -178,6 +186,8 @@ namespace CalculatorApplication {
 			this->button_plus->Text = L"+";
 			this->button_plus->UseVisualStyleBackColor = false;
 			this->button_plus->Click += gcnew System::EventHandler(this, &MyForm::button_plus_Click);
+			this->button_plus->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_plus_MouseEnter);
+			this->button_plus->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_plus_MouseLeave);
 			// 
 			// button_minus
 			// 
@@ -190,6 +200,8 @@ namespace CalculatorApplication {
 			this->button_minus->Text = L"-";
 			this->button_minus->UseVisualStyleBackColor = false;
 			this->button_minus->Click += gcnew System::EventHandler(this, &MyForm::button_minus_Click);
+			this->button_minus->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_minus_MouseEnter);
+			this->button_minus->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_minus_MouseLeave);
 			// 
 			// button_equal
 			// 
@@ -202,6 +214,8 @@ namespace CalculatorApplication {
 			this->button_equal->Text = L"=";
 			this->button_equal->UseVisualStyleBackColor = false;
 			this->button_equal->Click += gcnew System::EventHandler(this, &MyForm::button_equal_Click);
+			this->button_equal->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_equal_MouseEnter);
+			this->button_equal->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_equal_MouseLeave);
 			// 
 			// button_clear
 			// 
@@ -214,6 +228,8 @@ namespace CalculatorApplication {
 			this->button_clear->Text = L"C";
 			this->button_clear->UseVisualStyleBackColor = false;
 			this->button_clear->Click += gcnew System::EventHandler(this, &MyForm::button_clear_Click);
+			this->button_clear->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_clear_MouseEnter);
+			this->button_clear->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_clear_MouseLeave);
 			// 
 			// label_title
 			// 
@@ -232,7 +248,7 @@ namespace CalculatorApplication {
 			// 
 			this->button_exit->BackColor = System::Drawing::Color::MediumPurple;
 			this->button_exit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F));
-			this->button_exit->ForeColor = System::Drawing::Color::Red;
+			this->button_exit->ForeColor = System::Drawing::Color::White;
 			this->button_exit->Location = System::Drawing::Point(518, -1);
 			this->button_exit->Name = L"button_exit";
 			this->button_exit->Size = System::Drawing::Size(49, 23);
@@ -240,6 +256,8 @@ namespace CalculatorApplication {
 			this->button_exit->Text = L"EXIT";
 			this->button_exit->UseVisualStyleBackColor = false;
 			this->button_exit->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			this->button_exit->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_exit_MouseEnter);
+			this->button_exit->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_exit_MouseLeave);
 			// 
 			// button4
 			// 
@@ -252,6 +270,8 @@ namespace CalculatorApplication {
 			this->button4->Text = L"4";
 			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click_1);
+			this->button4->MouseEnter += gcnew System::EventHandler(this, &MyForm::button4_MouseEnter);
+			this->button4->MouseLeave += gcnew System::EventHandler(this, &MyForm::button4_MouseLeave);
 			// 
 			// button5
 			// 
@@ -264,6 +284,8 @@ namespace CalculatorApplication {
 			this->button5->Text = L"5";
 			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			this->button5->MouseEnter += gcnew System::EventHandler(this, &MyForm::button5_MouseEnter);
+			this->button5->MouseLeave += gcnew System::EventHandler(this, &MyForm::button5_MouseLeave);
 			// 
 			// button6
 			// 
@@ -276,6 +298,8 @@ namespace CalculatorApplication {
 			this->button6->Text = L"6";
 			this->button6->UseVisualStyleBackColor = false;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			this->button6->MouseEnter += gcnew System::EventHandler(this, &MyForm::button6_MouseEnter);
+			this->button6->MouseLeave += gcnew System::EventHandler(this, &MyForm::button6_MouseLeave);
 			// 
 			// button7
 			// 
@@ -288,6 +312,8 @@ namespace CalculatorApplication {
 			this->button7->Text = L"7";
 			this->button7->UseVisualStyleBackColor = false;
 			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			this->button7->MouseEnter += gcnew System::EventHandler(this, &MyForm::button7_MouseEnter);
+			this->button7->MouseLeave += gcnew System::EventHandler(this, &MyForm::button7_MouseLeave);
 			// 
 			// button8
 			// 
@@ -300,6 +326,8 @@ namespace CalculatorApplication {
 			this->button8->Text = L"8";
 			this->button8->UseVisualStyleBackColor = false;
 			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			this->button8->MouseEnter += gcnew System::EventHandler(this, &MyForm::button8_MouseEnter);
+			this->button8->MouseLeave += gcnew System::EventHandler(this, &MyForm::button8_MouseLeave);
 			// 
 			// button9
 			// 
@@ -312,6 +340,8 @@ namespace CalculatorApplication {
 			this->button9->Text = L"9";
 			this->button9->UseVisualStyleBackColor = false;
 			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
+			this->button9->MouseEnter += gcnew System::EventHandler(this, &MyForm::button9_MouseEnter);
+			this->button9->MouseLeave += gcnew System::EventHandler(this, &MyForm::button9_MouseLeave);
 			// 
 			// button_divide
 			// 
@@ -324,6 +354,8 @@ namespace CalculatorApplication {
 			this->button_divide->Text = L"÷";
 			this->button_divide->UseVisualStyleBackColor = false;
 			this->button_divide->Click += gcnew System::EventHandler(this, &MyForm::button_divide_Click);
+			this->button_divide->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_divide_MouseEnter);
+			this->button_divide->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_divide_MouseLeave);
 			// 
 			// button_multiplication
 			// 
@@ -336,6 +368,8 @@ namespace CalculatorApplication {
 			this->button_multiplication->Text = L"x";
 			this->button_multiplication->UseVisualStyleBackColor = false;
 			this->button_multiplication->Click += gcnew System::EventHandler(this, &MyForm::button_multiplication_Click);
+			this->button_multiplication->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_multiplication_MouseEnter);
+			this->button_multiplication->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_multiplication_MouseLeave);
 			// 
 			// MyForm
 			// 
@@ -372,6 +406,9 @@ namespace CalculatorApplication {
 
 		}
 #pragma endregion
+	///	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	/// DE AICI IN JOS SUNT FUNCTII PENTRU CLICK PE BUTON
 	private: System::Void button0_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!current_element)
 			first_element_value += button0->Text;
@@ -514,15 +551,6 @@ namespace CalculatorApplication {
 			first_element_sign = '-';
 		else first_element_sign = '+';
 
-		/*int aux_result = result;
-
-		if (result * 1000 == aux_result * 1000) {	/// daca toate cifrele dupa zecimala sunt 0
-			textBox1->Text = aux_result.ToString();
-		}
-		else {	/// daca nu sunt toate 0
-			textBox1->Text = result.ToString("F3");
-		}*/
-
 		result = Math::Round(result, 3);
 		textBox1->Text = result.ToString("G");
 
@@ -555,6 +583,114 @@ namespace CalculatorApplication {
 
 		operation = '/';
 		current_element = true;
+	}
+
+	///	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	/// DE AICI IN JOS SUNT FUNCTII PENTRU HOVER PE BUTON
+	private: System::Void button_clear_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_clear->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_clear_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_clear->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button0_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button0->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button0_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button0->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button1_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button1->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button1->BackColor = System::Drawing::Color::MediumPurple;
+	}
+
+	private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button2->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button2_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button2->BackColor = System::Drawing::Color::MediumPurple;
+	}
+
+	private: System::Void button3_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button3->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button3_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button3->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button4_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button4->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button4_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button4->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button5_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button5->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button5_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button5->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button6_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button6->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button6_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button6->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button7_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button7->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button7_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button7->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button8_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button8->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button8_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button8->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button9_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button9->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button9_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button9->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button_divide_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_divide->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_divide_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_divide->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button_multiplication_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_multiplication->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_multiplication_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_multiplication->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button_plus_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_plus->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_plus_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_plus->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button_minus_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_minus->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_minus_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_minus->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button_equal_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_equal->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_equal_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_equal->BackColor = System::Drawing::Color::MediumPurple;
+	}
+	private: System::Void button_exit_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+		button_exit->BackColor = System::Drawing::Color::Red;
+	}
+	private: System::Void button_exit_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+		button_exit->BackColor = System::Drawing::Color::MediumPurple;
 	}
 };
 }
