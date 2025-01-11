@@ -54,6 +54,9 @@ namespace CalculatorApplication {
 
 	private: System::Windows::Forms::Button^ button_equal;
 	private: System::Windows::Forms::Button^ button_clear;
+	private: System::Windows::Forms::Label^ label_title;
+
+
 
 	private:
 		/// <summary>
@@ -77,12 +80,13 @@ namespace CalculatorApplication {
 			this->button_minus = (gcnew System::Windows::Forms::Button());
 			this->button_equal = (gcnew System::Windows::Forms::Button());
 			this->button_clear = (gcnew System::Windows::Forms::Button());
+			this->label_title = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// textBox1
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 28.25F));
-			this->textBox1->Location = System::Drawing::Point(1, 71);
+			this->textBox1->Location = System::Drawing::Point(1, 93);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
 			this->textBox1->Size = System::Drawing::Size(664, 50);
@@ -151,7 +155,7 @@ namespace CalculatorApplication {
 			// 
 			// button_equal
 			// 
-			this->button_equal->Location = System::Drawing::Point(554, 127);
+			this->button_equal->Location = System::Drawing::Point(554, 149);
 			this->button_equal->Name = L"button_equal";
 			this->button_equal->Size = System::Drawing::Size(99, 67);
 			this->button_equal->TabIndex = 7;
@@ -161,7 +165,7 @@ namespace CalculatorApplication {
 			// 
 			// button_clear
 			// 
-			this->button_clear->Location = System::Drawing::Point(12, 127);
+			this->button_clear->Location = System::Drawing::Point(12, 149);
 			this->button_clear->Name = L"button_clear";
 			this->button_clear->Size = System::Drawing::Size(99, 67);
 			this->button_clear->TabIndex = 8;
@@ -169,11 +173,26 @@ namespace CalculatorApplication {
 			this->button_clear->UseVisualStyleBackColor = true;
 			this->button_clear->Click += gcnew System::EventHandler(this, &MyForm::button_clear_Click);
 			// 
+			// label_title
+			// 
+			this->label_title->AutoSize = true;
+			this->label_title->Font = (gcnew System::Drawing::Font(L"Wide Latin", 29.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label_title->ForeColor = System::Drawing::Color::Red;
+			this->label_title->Location = System::Drawing::Point(58, 25);
+			this->label_title->Name = L"label_title";
+			this->label_title->Size = System::Drawing::Size(544, 48);
+			this->label_title->TabIndex = 9;
+			this->label_title->Text = L"CALCULATOR";
+			this->label_title->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->label_title->Click += gcnew System::EventHandler(this, &MyForm::label_title_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(665, 463);
+			this->Controls->Add(this->label_title);
 			this->Controls->Add(this->button_clear);
 			this->Controls->Add(this->button_equal);
 			this->Controls->Add(this->button_minus);
@@ -295,6 +314,8 @@ namespace CalculatorApplication {
 
 		textBox1->Text = "";
 	}
+private: System::Void label_title_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
 
