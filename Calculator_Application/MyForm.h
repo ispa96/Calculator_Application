@@ -268,3 +268,11 @@ namespace CalculatorApplication {
 	}
 };
 }
+
+/**
+
+	info:
+	
+	-> first buttons working good (even negative and positive buttons)
+
+**/
