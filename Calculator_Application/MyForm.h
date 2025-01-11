@@ -484,9 +484,9 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_equal_Click(System::Object^ sender, System::EventArgs^ e) {
-		int first_element = Int32::Parse(first_element_value);
-		int second_element = Int32::Parse(second_element_value);
-		int result = 0;
+		double first_element = Double::Parse(first_element_value);
+		double second_element = Double::Parse(second_element_value);
+		double result = 0;
 
 		first_element_value = "";	/// resetam stringul ce tine primul element
 		second_element_value = "";	/// idem pentru al doilea
@@ -514,11 +514,22 @@ namespace CalculatorApplication {
 			first_element_sign = '-';
 		else first_element_sign = '+';
 
-		textBox1->Text = result.ToString();
+		/*int aux_result = result;
+
+		if (result * 1000 == aux_result * 1000) {	/// daca toate cifrele dupa zecimala sunt 0
+			textBox1->Text = aux_result.ToString();
+		}
+		else {	/// daca nu sunt toate 0
+			textBox1->Text = result.ToString("F3");
+		}*/
+
+		result = Math::Round(result, 3);
+		textBox1->Text = result.ToString("G");
+
 		if (result < 0)
 			result *= -1;
 
-		first_element_value = result.ToString();
+		first_element_value = result.ToString("F3");
 	}
 	private: System::Void button_clear_Click(System::Object^ sender, System::EventArgs^ e) {
 		any_key_pressed = false;
