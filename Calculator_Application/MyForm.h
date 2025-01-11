@@ -262,9 +262,12 @@ namespace CalculatorApplication {
 		if (result < 0)
 			first_element_sign = '-';
 		else first_element_sign = '+';
+
+		textBox1->Text = result.ToString();
+		if (result < 0)
+			result *= -1;
+
 		first_element_value = result.ToString();
-		
-		textBox1->Text = first_element_value;
 	}
 };
 }
