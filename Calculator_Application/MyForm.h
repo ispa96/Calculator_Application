@@ -484,7 +484,11 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_plus_Click(System::Object^ sender, System::EventArgs^ e) {
-		/// dupa ce alegem cele 2 numere trebuie sa putem apasa doar pe egal, nu mai putem apasa pe plus/minus
+		if (first_element_sign != '0' && first_element_value == "") {
+			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+			return;
+		}
+
 		if (second_element_sign != '0' || second_element_value != "") {
 			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
 			return;
@@ -504,7 +508,11 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_minus_Click(System::Object^ sender, System::EventArgs^ e) {
-		/// dupa ce alegem cele 2 numere trebuie sa putem apasa doar pe egal, nu mai putem apasa pe plus/minus
+		if (first_element_sign != '0' && first_element_value == "") {
+			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+			return;
+		}
+
 		if (second_element_sign != '0' || second_element_value != "") {
 			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
 			return;
@@ -725,6 +733,6 @@ namespace CalculatorApplication {
 
 	info:
 	
-	
+	-> trebuie sa rezolv la + si - sa poata fi apasate doar dupa ce se alege primul numar
 
 **/
