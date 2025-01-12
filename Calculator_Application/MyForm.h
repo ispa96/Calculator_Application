@@ -65,15 +65,6 @@ namespace CalculatorApplication {
 	private: System::Windows::Forms::Button^ button_divide;
 	private: System::Windows::Forms::Button^ button_multiplication;
 
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -493,6 +484,12 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_plus_Click(System::Object^ sender, System::EventArgs^ e) {
+		/// dupa ce alegem cele 2 numere trebuie sa putem apasa doar pe egal, nu mai putem apasa pe plus/minus
+		if (second_element_sign != '0' || second_element_value != "") {
+			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+			return;
+		}
+
 		if (!any_key_pressed)	/// daca e prima tasta apasta
 			first_element_sign = '+';	/// semnul primului element
 		else {
@@ -507,6 +504,12 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_minus_Click(System::Object^ sender, System::EventArgs^ e) {
+		/// dupa ce alegem cele 2 numere trebuie sa putem apasa doar pe egal, nu mai putem apasa pe plus/minus
+		if (second_element_sign != '0' || second_element_value != "") {
+			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+			return;
+		}
+
 		if (!any_key_pressed)	/// idem button_plus
 			first_element_sign = '-';
 		else {
@@ -521,6 +524,12 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_equal_Click(System::Object^ sender, System::EventArgs^ e) {
+		/// daca apas egal si al doilea element nu este setat, trebuie sa dea o eroase
+		if (second_element_value == "") {
+			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+			return;	/// iese din functie
+		}
+
 		double first_element = Double::Parse(first_element_value);
 		double second_element = Double::Parse(second_element_value);
 		double result = 0;
@@ -574,15 +583,29 @@ namespace CalculatorApplication {
 	}
 	private: System::Void button_multiplication_Click(System::Object^ sender, System::EventArgs^ e) {
 		/// daca este prima tasta apasata trebuie sa apara o fereastra care zice ca elementul nu poate fi selectat
+		if (any_key_pressed) {	/// daca am ales deja semnul pentru primul element
+			if (operation == '0') {	/// daca operatia nu a fost aleasa
+				operation = '*';	/// setam operatia
+				current_element = true;
+				return;	/// iesim din functie
+			}
+		}
 
-		operation = '*';
-		current_element = true;
+		/// daca nu a fost aleasa corect, afisam un mesaj
+		MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
 	}
 	private: System::Void button_divide_Click(System::Object^ sender, System::EventArgs^ e) {
 		/// daca este prima tasta apasata trebuie sa apara o fereastra care zice ca elementul nu poate fi selectat
+		if (any_key_pressed) {	/// daca am ales deja semnul pentru primul element
+			if (operation == '0') {	/// daca operatia inca nu a fost aleasa
+				operation = '/';	/// setam operatia 
+				current_element = true;
+				return;	/// iesim din functie
+			}
+		}
 
-		operation = '/';
-		current_element = true;
+		/// daca nu a fost aleasa corect, afisam un mesaj
+		MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
 	}
 
 	///	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -606,7 +629,6 @@ namespace CalculatorApplication {
 	private: System::Void button1_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		button1->BackColor = System::Drawing::Color::MediumPurple;
 	}
-
 	private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 		button2->BackColor = System::Drawing::Color::Red;
 	}
@@ -692,6 +714,10 @@ namespace CalculatorApplication {
 	private: System::Void button_exit_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 		button_exit->BackColor = System::Drawing::Color::MediumPurple;
 	}
+
+	///	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	/// 
 };
 }
 
