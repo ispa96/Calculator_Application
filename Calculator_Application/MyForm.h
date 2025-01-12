@@ -51,6 +51,7 @@ namespace CalculatorApplication {
 		String^ second_element_value = "";
 		char first_element_sign = '0', second_element_sign = '0';
 		char operation = '0';
+		int button_equal_pressed = 0;	/// de cate ori am apsat egal
 
 	private: System::Windows::Forms::Button^ button_equal;
 	private: System::Windows::Forms::Button^ button_clear;
@@ -246,7 +247,7 @@ namespace CalculatorApplication {
 			this->button_exit->TabIndex = 10;
 			this->button_exit->Text = L"EXIT";
 			this->button_exit->UseVisualStyleBackColor = false;
-			this->button_exit->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			this->button_exit->Click += gcnew System::EventHandler(this, &MyForm::button_exit_Click);
 			this->button_exit->MouseEnter += gcnew System::EventHandler(this, &MyForm::button_exit_MouseEnter);
 			this->button_exit->MouseLeave += gcnew System::EventHandler(this, &MyForm::button_exit_MouseLeave);
 			// 
@@ -401,6 +402,13 @@ namespace CalculatorApplication {
 
 	/// DE AICI IN JOS SUNT FUNCTII PENTRU CLICK PE BUTON
 	private: System::Void button0_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button0->Text;
 		else second_element_value += button0->Text;
@@ -409,6 +417,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button1->Text;
 		else second_element_value += button1->Text;
@@ -417,6 +432,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button2->Text;
 		else second_element_value += button2->Text;
@@ -425,6 +447,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button3->Text;
 		else second_element_value += button3->Text;
@@ -432,10 +461,14 @@ namespace CalculatorApplication {
 		if (!any_key_pressed)
 			any_key_pressed = true;
 	}
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		MyForm::Close();
-	}
 	private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button4->Text;
 		else second_element_value += button4->Text;
@@ -444,6 +477,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button5->Text;
 		else second_element_value += button5->Text;
@@ -452,6 +492,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button6->Text;
 		else second_element_value += button6->Text;
@@ -460,6 +507,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button7->Text;
 		else second_element_value += button7->Text;
@@ -468,6 +522,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button8->Text;
 		else second_element_value += button8->Text;
@@ -476,6 +537,13 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (button_equal_pressed) {	/// daca am apasat egal
+			if (operation == '0') {	/// trebuie sa alegem doar operatie
+				MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+				return;
+			}
+		}
+
 		if (!current_element)
 			first_element_value += button9->Text;
 		else second_element_value += button9->Text;
@@ -532,6 +600,8 @@ namespace CalculatorApplication {
 			any_key_pressed = true;
 	}
 	private: System::Void button_equal_Click(System::Object^ sender, System::EventArgs^ e) {
+		button_equal_pressed++;
+
 		/// daca apas egal si al doilea element nu este setat, trebuie sa dea o eroase
 		if (second_element_value == "") {
 			MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
@@ -614,6 +684,10 @@ namespace CalculatorApplication {
 
 		/// daca nu a fost aleasa corect, afisam un mesaj
 		MessageBox::Show("You cannot chose this button!", "An ERROR has occurred!", MessageBoxButtons::OK, MessageBoxIcon::Question);
+	}
+
+	private: System::Void button_exit_Click(System::Object^ sender, System::EventArgs^ e) {
+		MyForm::Close();
 	}
 
 	///	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -733,6 +807,6 @@ namespace CalculatorApplication {
 
 	info:
 	
-	-> trebuie sa rezolv la + si - sa poata fi apasate doar dupa ce se alege primul numar
+	-> trebuie sa rezolv ca dupa egal, sa nu pot apasa cifre, ci doar operatii
 
 **/
