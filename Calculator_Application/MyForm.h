@@ -649,6 +649,7 @@ namespace CalculatorApplication {
 	private: System::Void button_clear_Click(System::Object^ sender, System::EventArgs^ e) {
 		any_key_pressed = false;
 		current_element = false;
+		button_equal_pressed = 0;
 
 		first_element_value = "";
 		second_element_value = "";
@@ -661,7 +662,7 @@ namespace CalculatorApplication {
 	}
 	private: System::Void button_multiplication_Click(System::Object^ sender, System::EventArgs^ e) {
 		/// daca este prima tasta apasata trebuie sa apara o fereastra care zice ca elementul nu poate fi selectat
-		if (any_key_pressed) {	/// daca am ales deja semnul pentru primul element
+		if (any_key_pressed && first_element_value != "") {	/// daca am ales deja semnul pentru primul element
 			if (operation == '0') {	/// daca operatia nu a fost aleasa
 				operation = '*';	/// setam operatia
 				current_element = true;
@@ -674,7 +675,7 @@ namespace CalculatorApplication {
 	}
 	private: System::Void button_divide_Click(System::Object^ sender, System::EventArgs^ e) {
 		/// daca este prima tasta apasata trebuie sa apara o fereastra care zice ca elementul nu poate fi selectat
-		if (any_key_pressed) {	/// daca am ales deja semnul pentru primul element
+		if (any_key_pressed && first_element_value != "") {	/// daca am ales deja semnul pentru primul element
 			if (operation == '0') {	/// daca operatia inca nu a fost aleasa
 				operation = '/';	/// setam operatia 
 				current_element = true;
